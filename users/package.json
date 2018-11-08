@@ -1,0 +1,16 @@
+{
+  "name": "users",
+  "version": "1.0.0",
+  "description": "",
+  "main": "testHelper.js",
+  "scripts": {
+    "test": "nodemon --exec 'mocha'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^5.2.0",
+    "mongoose": "^5.3.10",
+    "nodemon": "^1.18.6"
+  }
+}
