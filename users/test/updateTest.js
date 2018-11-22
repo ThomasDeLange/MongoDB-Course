@@ -50,4 +50,18 @@ describe('The updater', () => {
       done()
     );
   });
+
+  it('Can increase postcount by one', (done) => {
+    //1: get all users joe
+    //2: Doe een increment op postCount met waarde 1
+    User.updateMany({name: 'Joe'}, {$inc: {likes: 1}})
+      .then(() => User.findOne({name: 'Joe'}))
+      .then((user) => {
+        assert(user.likes === 1)
+        done()
+      })
+      .catch((error) => {
+        done(error)
+      })
+  });
 });

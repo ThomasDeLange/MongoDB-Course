@@ -15,5 +15,15 @@ before((done) => {
 
 
 beforeEach((done) => {
-  Mongoose.connection.collections.users.drop(() => {done()});
+  //lowercase all want mongoose is kut
+  //Alles moet met een s ondanks dat ik dat nergens heb gezegd!
+  const {users, comments, blogposts} = Mongoose.connection.collections;
+
+  users.drop(() => {
+    comments.drop(() => {
+      blogposts.drop(() => {
+        done()
+      })
+    })
+  });
 })
