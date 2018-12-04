@@ -1,7 +1,7 @@
 const assert = require('assert');
 const User = require('../src/User');
 
-describe('The virtual type', () => {
+describe.only('The virtual type', () => {
   it('returns the number of posts', (done) => {
     const joe = new User({
       name: 'Joe',
@@ -11,6 +11,7 @@ describe('The virtual type', () => {
     joe.save()
       .then(() => User.findOne({name: 'Joe'}))
       .then((user) => {
+        console.log(user.postCount);
         assert(joe.postCount === 2)
         done()
       })

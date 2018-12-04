@@ -32,7 +32,7 @@ describe('The reader', () => {
       })
   })
 
-  it.only('can skip & limit the result set', (done) => {
+  it('can skip & limit the result set', (done) => {
     //Only get back the second and third
     User.find({})
       .sort({name: 1})
